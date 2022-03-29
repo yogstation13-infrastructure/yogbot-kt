@@ -64,7 +64,16 @@ ingress:
   className: ""
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt
-  hosts: [ "yogbotkt.yogstation.net" ]
+  hosts:
+    - host: yogbotkt.yogstation.net
+      http:
+        paths:
+          - backend:
+              service:
+                name: yogbotkt
+                port:
+                  name: http
+            pathType: ImplementationSpecific
   tls:
     - hosts:
         - yogbotkt.yogstation.net
