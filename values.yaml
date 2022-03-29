@@ -64,11 +64,11 @@ ingress:
   className: ""
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt
-  hosts: [ "yogbot.yogstation.net" ]
+  hosts: [ "yogbotkt.yogstation.net" ]
   tls:
     - hosts:
-        - yogbot.yogstation.net
-      secretName: yogbot-cert
+        - yogbotkt.yogstation.net
+      secretName: yogbotkt-cert
 
 #TODO: Setup resource limits
 resources: {}
@@ -161,7 +161,7 @@ config:
     repoLink: "https://api.github.com/repos/yogstation13/Yogstation"
 
   http:
-    publicPath: "https://yogbot.yogstation.net/"
+    publicPath: "https://yogbotkt.yogstation.net/"
 
 
 configFlat:
