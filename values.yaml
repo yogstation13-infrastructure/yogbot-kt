@@ -117,7 +117,8 @@ config:
     reactionlessRole: "705547660639207435"
     quickfireBanRole: "730094500571250718"
 
-    #Channels
+  #Channels
+  channel:
     channelImportantAdmin: "134722058688004096"
     channelAdmin: "134722036353204224"
     channelAdmemes: "378318242906636288"
@@ -148,32 +149,48 @@ config:
     serverAddress: "game.yogstation.net"
     serverPort: 4133
     serverJoinAddress: "https://yogstation.net/play.php"
+
   database:
     hostname: "mariadb.mariadb"
     port: 3306
     byondDatabase: "yogstation_copy"
     yogbotDatabase: "yogstation_yogbot"
     prefix: "erro_"
+
   github: 
     repoLink: "https://api.github.com/repos/yogstation13/Yogstation"
+
   http:
     publicPath: "https://yogbot.yogstation.net/"
+
+
+configFlat:
+  "spring.datasource.url": "jdbc:mysql://mariadb.mariadb:3306/yogstation_yogbot"
+  "spring.jpa.hibernate.ddl-auto": "update"
+  "spring.datasource.hikari.maximum-pool-size": "4"
+  "spring.datasource.hikari.minimum-idle": "10"
 
 secrets:
   discord:
     botToken: ""
     oauthClientId: ""
     oauthClientSecret: ""
-  byond:
-    serverKey: ""
-    serverWebhookKey: ""
-  database:
-    username: ""
-    password: ""
     msayWebhookUrl: ""
     asayWebhookUrl: ""
     ticketWebhookUrl: ""
+
+  byond:
+    serverKey: ""
+    serverWebhookKey: ""
+
+  database:
+    username: ""
+    password: ""
+
   github:
     hmac: ""
     token: ""
-    
+
+secretsFlat:
+  "spring.datasource.username": ""
+  "spring.datasource.password": ""

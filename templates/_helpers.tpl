@@ -69,7 +69,7 @@ Create the name of the service account to use
   {{- if kindOf $val | eq "map" -}}
     {{- list $val $sublabel | include "yogbot-kt.recurseFlattenMap" -}}
   {{- else -}}
-- {{ $sublabel | quote }}: {{ $val | quote }}
+{{ $sublabel | quote }}: {{ $val | quote }}
 {{ end -}}
 {{- end -}}
 {{- end -}}
