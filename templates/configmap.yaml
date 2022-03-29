@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ template "yogbot-kt.fullname" . }}
+  labels:
+    {{- include "yogbot-kt.labels" . | nindent 4 }}
+data: {{list .Values.config "yogbot" | include "yogbot-kt.recurseFlattenMap" | nindent 2}}

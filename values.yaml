@@ -1,0 +1,179 @@
+# Default values for yogbot-kt.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  repository: kustomizeoverride
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: kustomizeoverride
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: false
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
+
+podAnnotations: {}
+podLabels:
+  database-access: "true"
+
+podSecurityContext:
+  runAsUser: 1000
+  fsGroup: 1000
+
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+service:
+  type: ClusterIP
+  port: 80
+
+probes:
+  startup:
+    enabled: true
+    initialDelaySeconds: 3
+    periodSeconds: 2
+    failureThreshold: 10
+  liveness:
+    enabled: true
+    periodSeconds: 5
+    failureThreshold: 3
+  readiness:
+    enabled: false
+    periodSeconds: 5
+    failureThreshold: 3
+
+
+ingress:
+  enabled: true
+  className: ""
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt
+  hosts: [ "yogbot.yogstation.net" ]
+  tls:
+    - hosts:
+        - yogbot.yogstation.net
+      secretName: yogbot-cert
+
+#TODO: Setup resource limits
+resources: {}
+"test": {}
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+config:
+  discord:
+    commandPrefix: "$"
+    serverName: "Yogstation 13"
+    oauthAuthorizeUrl: "https://bab.yogstation.net/auth/authorize"
+    oauthTokenUrl: "https://bab.yogstation.net/auth/token"
+    oauthUserInfoUrl: "https://bab.yogstation.net/auth/userinfo"
+    mainGuildID: "134720091576205312"
+
+    #Roles
+    aoRole: "471634210923216906"
+    mentorRole: "505280515322937355"
+    jesterRole: "539846767827746817"
+    subscriberRole: "213375106888499200"
+    manualVerifyRole: "768196461313523727"
+    byondVerificationRole: "762005208326733845"
+    donorRole: "229547035047624704"
+    staffRole: "134721069943619584"
+    softBanRole: "302093934551629827"
+    loreBanRole: "716784185192480798"
+    mentorBanRole: "865043884170149928"
+    wikibanRole: "792982865989992490"
+    firstWarningRole: "514066643119505408"
+    secondWarningRole: "514066798216347662"
+    staffPublicBanRole: "290926097028218884"
+    cannotAnnounceRole: "782372452017242223"
+    staffCouncilBanRole: "290926097028218884"
+    cmBanRole: "716362941586210897"
+    townhallBanRole: "701505626928578590"
+    devBanRole: "626436186054852608"
+    mutedRole: "532336604748972056"
+    cantReactInStaffPublicRole: "603027738843938840"
+    purgedRole: "696476134141067294"
+    unemojiworthyRole: "700535019357208608"
+    reactionlessRole: "705547660639207435"
+    quickfireBanRole: "730094500571250718"
+
+    #Channels
+    channelImportantAdmin: "134722058688004096"
+    channelAdmin: "134722036353204224"
+    channelAdmemes: "378318242906636288"
+    channelAdminBotspam: "458282555284783114"
+    channelAsay: "161564229852332032"
+    channelMsay: "558809391172812810"
+    channelMentor: "558823007175573535"
+    channelStaffPublic: "186490543398715392"
+    channelCouncil: "950316188053929984"
+    channelDevelopmentPublic: "205784753352343552"
+    channelSpriter: "440551954788253697"
+    channelMaintainerChat: "408008557993132035"
+    channelPublic: "134720091576205312"
+    channelOOC: "161524149355806720"
+    channelMemes: "347045440958627841"
+    channelBotspam: "423761888309018624"
+    channelPublicLog: "790670358038577172"
+    channelMapping: "661343269942198295"
+    channelBanAppeals: "665767898333052929"
+    channelPlayerComplaints: "665768003568140318"
+    channelAdminComplaints: "665768046140588032"
+    channelStaffApplications: "665768082899337226"
+    channelMentorApplications: "665785215985254420"
+    channelGithubSpam: "701120514038693938"
+    channelBugReports: "773277250090434640"
+
+  byond:
+    serverAddress: "game.yogstation.net"
+    serverPort: 4133
+    serverJoinAddress: "https://yogstation.net/play.php"
+  database:
+    hostname: "mariadb.mariadb"
+    port: 3306
+    byondDatabase: "yogstation_copy"
+    yogbotDatabase: "yogbot"
+    prefix: "erro_"
+  github: 
+    repoLink: "https://api.github.com/repos/yogstation13/Yogstation"
+  http:
+    publicPath: "https://yogbot.yogstation.net/"
+
+secrets:
+  discord:
+    botToken: ""
+    oauthClientId: ""
+    oauthClientSecret: ""
+  byond:
+    serverKey: ""
+    serverWebhookKey: ""
+  database:
+    username: ""
+    password: ""
+    msayWebhookUrl: ""
+    asayWebhookUrl: ""
+    ticketWebhookUrl: ""
+  github:
+    hmac: ""
+    token: ""
+    
