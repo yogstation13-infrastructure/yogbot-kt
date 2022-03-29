@@ -152,7 +152,7 @@ config:
     hostname: "mariadb.mariadb"
     port: 3306
     byondDatabase: "yogstation_copy"
-    yogbotDatabase: "yogbot"
+    yogbotDatabase: "yogstation_yogbot"
     prefix: "erro_"
   github: 
     repoLink: "https://api.github.com/repos/yogstation13/Yogstation"
