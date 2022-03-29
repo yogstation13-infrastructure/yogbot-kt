@@ -1,7 +1,8 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - kustomization/inflated.yaml
-replicas:
-  - name: jenkins
-    count: 1
+- kustomization/inflated.yaml
+images:
+- digest: sha256:b539ccc4202770d10e194778439655beed1623343c4f1dc65828760dbcc5a8a2
+  name: kustomizeoverride
+  newName: harbor.yogstation.net/yogstation/yogbotkt
