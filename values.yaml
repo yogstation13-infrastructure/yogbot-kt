@@ -127,7 +127,7 @@ config:
     quickfireBanRole: "730094500571250718"
 
   #Channels
-  channel:
+  channels:
     channelImportantAdmin: "134722058688004096"
     channelAdmin: "134722036353204224"
     channelAdmemes: "378318242906636288"
