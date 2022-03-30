@@ -29,5 +29,14 @@ spec:
   {{- if .Values.ingress.tls }}
   tls: {{ toYaml .Values.ingress.tls | nindent 4 }}
   {{- end }}
-  rules: {{ toYaml .Values.ingress.hosts | nindent 4 }}
+  rules:
+  - host: {{ .Values.ingress.host }}
+    http:
+      paths:
+        - backend:
+            service:
+              name: {{ include "yogbot-kt.fullname" . }}
+              port:
+                name: http
+          pathType: ImplementationSpecific
 {{- end }}
