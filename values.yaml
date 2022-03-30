@@ -148,7 +148,7 @@ config:
   byond:
     serverAddress: "game.yogstation.net"
     serverPort: 4133
-    serverJoinAddress: "https://yogstation.net/play.php"
+    serverJoinAddress: "https://yogstation.net/join"
 
   database:
     hostname: "mariadb.mariadb"
