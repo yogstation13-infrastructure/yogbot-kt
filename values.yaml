@@ -82,7 +82,7 @@ affinity: {}
 
 config:
   discord:
-    commandPrefix: "$"
+    commandPrefix: "!"
     serverName: "Yogstation 13"
     oauthAuthorizeUrl: "https://bab.yogstation.net/auth/authorize"
     oauthTokenUrl: "https://bab.yogstation.net/auth/token"
