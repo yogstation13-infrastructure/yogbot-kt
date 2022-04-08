@@ -3,6 +3,6 @@ kind: Kustomization
 resources:
 - kustomization/inflated.yaml
 images:
-- digest: sha256:6559134a7db858e132e64872b37294e7ce987dd55ed7f5c85edc9c189ac99783
+- digest: sha256:d689e3bb5cf3c2416b49d87a105c23ba831d7e4f7faaa57f11e817ff19a27193
   name: kustomizeoverride
   newName: harbor.yogstation.net/yogstation/yogbotkt
