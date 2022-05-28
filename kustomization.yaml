@@ -3,6 +3,6 @@ kind: Kustomization
 resources:
 - kustomization/inflated.yaml
 images:
-- digest: master-f97df2cf2618c37d24e0bf9eb5f2110c36461741
-  name: kustomizeoverride
+- name: kustomizeoverride
   newName: ghcr.io/yogstation13/yogbot-kt
+  newTag: master-f97df2cf2618c37d24e0bf9eb5f2110c36461741
