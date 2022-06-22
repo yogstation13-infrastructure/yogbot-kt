@@ -5,4 +5,4 @@ resources:
 images:
 - name: kustomizeoverride
   newName: ghcr.io/yogstation13/yogbot-kt
-  newTag: master-f97df2cf2618c37d24e0bf9eb5f2110c36461741
+  newTag: master-aae43836e1d97c5ebdc05c248fc0f0ae458282fb
