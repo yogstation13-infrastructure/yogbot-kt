@@ -121,6 +121,7 @@ config:
   channels:
     channelImportantAdmin: "134722058688004096"
     channelAdmin: "134722036353204224"
+    channelAdminAdminComplaints: "1036031251368382504"
     channelAdmemes: "378318242906636288"
     channelAdminBotspam: "458282555284783114"
     channelAsay: "161564229852332032"
@@ -156,6 +157,14 @@ config:
     byondDatabase: "yogstation_copy"
     yogbotDatabase: "yogstation_yogbot"
     prefix: "erro_"
+
+  forums:
+    banAppealsForum: 2
+    playerComplaintsForum: 3
+    adminComplaintsForums: 4
+    adminAdminComplaintsForum: 146
+    staffApplicationsForum: 6
+    mentorApplicationsForum: 206
 
   github: 
     repoLink: "https://api.github.com/repos/yogstation13/Yogstation"
