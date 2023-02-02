@@ -147,7 +147,7 @@ config:
     channelBugReports: "773277250090434640"
 
   byond:
-    serverAddress: "game.yogstation.net"
+    serverAddress: "tgs-byond.tgs"
     serverPort: 4133
     serverJoinAddress: "https://yogstation.net/join"
 
