@@ -167,7 +167,7 @@ config:
     staffApplicationsForum: 6
     mentorApplicationsForum: 206
     activityGroups: "8,59,77,3,18,4,61"
-    activityExempt: "8,61,18"
+    activityExempt: "8,61,18,84"
 
   github: 
     repoLink: "https://api.github.com/repos/yogstation13/Yogstation"
