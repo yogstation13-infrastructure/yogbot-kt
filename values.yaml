@@ -84,9 +84,9 @@ config:
   discord:
     commandPrefix: "!"
     serverName: "Yogstation 13"
-    oauthAuthorizeUrl: "https://bab.yogstation.net/auth/authorize"
-    oauthTokenUrl: "https://bab.yogstation.net/auth/token"
-    oauthUserInfoUrl: "https://bab.yogstation.net/auth/userinfo"
+    oauthAuthorizeUrl: "https://bab.alexkar598.dev/auth/authorize"
+    oauthTokenUrl: "https://bab.alexkar598.dev/auth/token"
+    oauthUserInfoUrl: "https://bab.alexkar598.dev/auth/userinfo"
     mainGuildID: "134720091576205312"
 
     #Roles
